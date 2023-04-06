@@ -1,4 +1,4 @@
-package GameEntity;
+package main.GameEntity;
 
 public class Card {
     private int numbers;

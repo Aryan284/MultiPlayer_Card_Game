@@ -4,18 +4,18 @@ import java.util.ArrayList;
 
 public class Player {
     private int id;
-    private ArrayList<GameEntity.Card> deckCards = new ArrayList<>();
+    private ArrayList<Card> deckCards = new ArrayList<>();
     public Player(int id){
         this.id = id;
     }
     public int getId(){
         return id;
     }
-    public ArrayList<GameEntity.Card> getCard(){
+    public ArrayList<Card> getCard(){
         return deckCards;
     }
 
-    public void addCards(GameEntity.Card card){
+    public void addCards(Card card){
         deckCards.add(card);
 
     }
@@ -23,4 +23,6 @@ public class Player {
         return id + " " + deckCards.toString();
 
     }
+
+
 }

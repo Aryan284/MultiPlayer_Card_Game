@@ -1,4 +1,4 @@
-package GameEntity;
+package main.GameEntity;
 
 import java.util.ArrayList;
 import java.util.Collection;
