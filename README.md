@@ -34,4 +34,4 @@ For Cloning: git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 You can run on any system that has Java installed.
 
-Thanks for visiting!!
+Thanks for visiting!
