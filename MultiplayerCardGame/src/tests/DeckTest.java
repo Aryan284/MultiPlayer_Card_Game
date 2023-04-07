@@ -10,6 +10,13 @@ import java.util.ArrayList;
 
 public class DeckTest {
     @Test
+    public void WhenInitializedShouldHave52Cards() {
+        Deck deck = new Deck();
+        ArrayList<Card> deck1 = deck.getDeckOfCard();
+//        System.out.println(deck1.toString());
+        Assert.assertEquals(52, deck1.size());
+    }
+    @Test
     public void checkShuffle(){
         ArrayList<Card> unShuffle = new ArrayList<>();
         for(Suits suits: Suits.values()){
