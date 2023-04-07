@@ -1,6 +1,6 @@
 package main.GameEntity;
 
 public enum Suits {
-    HEARTS, SPADES, DIAMONDS, CLUBS;
+    HEARTS, SPADES, CLUBS, DIAMOND;
 }
 
