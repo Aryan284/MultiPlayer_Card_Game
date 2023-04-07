@@ -19,6 +19,10 @@ public class Player {
         deckCards.add(card);
 
     }
+    public void removeCard(Card card){
+        deckCards.remove(card);
+        return;
+    }
     public String toString(){
         return id + " " + deckCards.toString();
 

@@ -48,9 +48,84 @@ public class GamePlay {
         for(Card c: deck){
             drawPile.add(c);
         }
-        
+        int CardTake = 1;
+        int dirs = 1;
+        int playerTurn = 0;
+        while (true){
+//            Draw Case
+            if(drawPile.size() < CardTake){
+                System.out.println("Cards are less... Draw Game!");
+                break;
+            }
+            playerTurn %= numberOfPlayers;
+            if(playerTurn < 0){
+                playerTurn += numberOfPlayers;
+            }
+            playerTurn %= numberOfPlayers;
+
+            boolean match = false;
+            int matchNum = -1;
+            Card topDiscardCard = discardPile.get(discardPile.size() - 1);
+            System.out.println("Top Card of Discard deck = " + discardPile.get(discardPile.size() - 1));
+
+            for(Card currentCard: players.get(playerTurn).getCard()){
+                if (currentCard.getNumbers() == topDiscardCard.getNumbers() || currentCard.getSuit() == topDiscardCard.getSuit()){
+                    if(topDiscardCard.getNumbers() == 1 || topDiscardCard.getNumbers() == 11 || topDiscardCard.getNumbers() == 12 || topDiscardCard.getNumbers() == 13){
+                        if(currentCard.getNumbers() == topDiscardCard.getNumbers()){
+                            continue;
+                        }
+                        System.out.println("Card matched for Player " + players.get(playerTurn).getId() + "Card and New Top Card of Discard deck = " + currentCard);
+
+                        if(CardTake > 1){
+                            while (CardTake > 0){
+                                System.out.println("Drawing " + drawPile.get(drawPile.size() - 1) + " Card");
+                                players.get(playerTurn).addCards(drawPile.get(drawPile.size() - 1));
+                                drawPile.remove(drawPile.size() - 1);
+                                CardTake -= 1;
+                            }
+                            CardTake = 1;
+                        }
+                        players.get(playerTurn).removeCard(currentCard);
+                        discardPile.add(currentCard);
+                        match = true;
+                        matchNum = currentCard.getNumbers();
+                        break;
+                    }
+                }
+            }
+            if(match = false){
+                System.out.println("No Cards match for Player " + players.get(playerTurn).getId() + " Taking " + CardTake + " Card(s)");
+                while (CardTake > 0){
+                    System.out.println("Drawing " + drawPile.get(drawPile.size() - 1) + " Card");
+                    players.get(playerTurn).addCards(drawPile.get(drawPile.size() - 1));
+                    drawPile.remove(drawPile.size() - 1);
+                    CardTake -= 1;
+
+                }
+                CardTake = 1;
+            }
+            if(match == true && players.get(playerTurn).getCard().size() == 0){
+                System.out.println("Congrats Player " + players.get(playerTurn).getId() + " Won the match!!");
+                System.exit(0);
+
+            }
+            if (match == true && matchNum == 1){
+                playerTurn += dirs;
+            }
+            if (match == true && matchNum == 13){
+                dirs *= -1;
+            }
+            if (match == true && matchNum == 11){
+                CardTake = 4;
+            }
+            if (match == true && matchNum == 12){
+                CardTake = 2;
+            }
+            playerTurn += dirs;
+            System.out.println("===========");
 
 
+        }
 
     }
 }
