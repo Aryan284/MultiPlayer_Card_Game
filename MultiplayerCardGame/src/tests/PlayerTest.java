@@ -9,19 +9,19 @@ import org.junit.Assert;
 public class PlayerTest {
     @Test
     public void AddPlayerCard(){
-        Card c = new Card(1, Suits.DIAMOND);
-        Player p = new Player(1);
-        p.addCards(c);
-        int ans = p.getCard().size();
-        Assert.assertEquals(1, ans);
+        Card c1 = new Card(1, Suits.DIAMOND);
+        Player p1 = new Player(1);
+        p1.addCards(c1);
+        int result = p1.getCard().size();
+        Assert.assertEquals(1, result);
     }
     @Test
     public void removeCard(){
-        Card c = new Card(1, Suits.DIAMOND);
-        Player p = new Player(1);
-        p.addCards(c);
-        p.removeCard(c);
-        int ans = p.getCard().size();
-        Assert.assertEquals(0, ans);
+        Card c1 = new Card(1, Suits.DIAMOND);
+        Player p1 = new Player(1);
+        p1.addCards(c1);
+        p1.removeCard(c1);
+        int result = p1.getCard().size();
+        Assert.assertEquals(0, result);
     }
 }
