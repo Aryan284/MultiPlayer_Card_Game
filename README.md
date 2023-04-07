@@ -30,9 +30,7 @@ NOTE: actions are not stackable i.e. if Q is played by player 1 then player two 
 # How to Run the Program
 First of all clone the repository to your local machine and then run the Main class from Main.java file and after that provide the input of number of players you want to participate (max-4; min-2).
 For Cloning: 
-```bash
 git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-```bash
 
 You can run on any system that has Java installed.
 
