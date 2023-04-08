@@ -33,5 +33,9 @@ First of all clone the repository to your local machine and then run the Main cl
 For Cloning: git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 You can run on any system that has Java installed.
+## Output Screenshots
+
+![Screenshot1](OutputScreenshot/op1.jpg)
+![Screenshot1](OutputScreenshot/op5.jpg)
 
 Thanks for visiting!
